@@ -14,7 +14,7 @@ from erpnext.setup.utils import identity as _
 from .default_success_action import get_default_success_action
 
 default_mail_footer = """<div style="padding: 7px; text-align: right; color: #888"><small>Sent via
-	<a style="color: #888" href="http://frappe.io/erpnext">ERPNext</a></div>"""
+	<a style="color: #888" href="#">ErpPlus</a></div>"""
 
 
 def after_install():
@@ -236,7 +236,7 @@ def add_standard_navbar_items():
 
 
 def add_app_name():
-	frappe.db.set_single_value("System Settings", "app_name", "ERPNext")
+	frappe.db.set_single_value("System Settings", "app_name", "ErpPlus")
 
 
 def update_roles():
