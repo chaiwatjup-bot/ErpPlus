@@ -1,5 +1,27 @@
 @import "./order-page";
 
+/* ErpPlus Logo Branding */
+.app-logo {
+	width: auto !important;
+	height: 40px !important;
+	max-width: 200px !important;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+.page-card .app-logo {
+	height: 60px !important;
+	max-width: 280px !important;
+	margin-bottom: 0.5rem;
+}
+
+.navbar-brand img,
+.footer-logo img {
+	height: 32px !important;
+	width: auto !important;
+	image-rendering: -webkit-optimize-contrast;
+}
+
 .filter-options {
 	max-height: 300px;
 	overflow: auto;
