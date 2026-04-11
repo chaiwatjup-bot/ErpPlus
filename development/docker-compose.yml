@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: erpplus-mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - ./mariadb.cnf:/etc/mysql/mariadb.conf.d/erpplus.cnf:ro
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis-cache:
+    image: redis:7-alpine
+    container_name: erpplus-redis-cache
+    restart: unless-stopped
+    ports:
+      - "13000:6379"
+
+  redis-queue:
+    image: redis:7-alpine
+    container_name: erpplus-redis-queue
+    restart: unless-stopped
+    ports:
+      - "11000:6379"
+
+  erpplus:
+    image: frappe/bench:latest
+    container_name: erpplus-bench
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis-cache:
+        condition: service_started
+      redis-queue:
+        condition: service_started
+    volumes:
+      - bench-data:/home/frappe/frappe-bench
+      - ../:/home/frappe/frappe-bench/apps/erpnext:rw
+    ports:
+      - "8080:8069"
+    stdin_open: true
+    tty: true
+    working_dir: /home/frappe/frappe-bench
+    command: sleep infinity
+
+volumes:
+  mariadb-data:
+  bench-data:

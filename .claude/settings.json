@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs ls:*)",
+      "Bash(grep -r \"bench \" /c/Users/Pok_t/Project/ErpPlus/.github/workflows/*.yml)",
+      "Bash(xargs -I {} basename {} .json)",
+      "Bash(ls -la /c/Users/Pok_t/Project/ErpPlus/erpnext/public/images/*.svg /c/Users/Pok_t/Project/ErpPlus/erpnext/public/images/*.png)",
+      "Bash(xargs grep:*)",
+      "Bash(pip --version)",
+      "Bash(yarn --version)",
+      "Bash(npm --version)",
+      "Bash(docker --version)",
+      "Bash(docker compose:*)",
+      "Bash(wsl --list --verbose)",
+      "Bash(docker info:*)",
+      "Bash(ls c:/Users/Pok_t/Project/ErpPlus/docker-compose*.yml)",
+      "Bash(docker exec:*)",
+      "Read(//c/Users/Pok_t/Project/frappe_docker/**)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8000)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8000/assets/frappe/dist/css/desk.bundle.OOGJF7ME.css)",
+      "Bash(curl -s http://localhost:8000/api/method/frappe.client.get_hooks)",
+      "Bash(curl -s http://localhost:8000)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8000/erpnext-web.bundle.css)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8000/assets/frappe/dist/css/desk.bundle.BYJU3NCA.css)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8000/assets/frappe/dist/css/desk.bundle.NSJHKR4K.css)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8000/assets/frappe/dist/css/login.bundle.*.css)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 root@34.87.136.200 \"echo 'SSH OK' && uname -a\")",
+      "Bash(gcloud compute:*)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://34.87.136.200)",
+      "Bash(nslookup testerp.tplus-asset.com)",
+      "Bash(nslookup testerp.tplus-asset.com 8.8.8.8)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://34.87.136.200 --connect-timeout 10)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://34.87.136.200/assets/frappe/dist/css/login.bundle.75O67TN7.css)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://testerp.tplus-asset.com --connect-timeout 10)",
+      "Bash(curl -s -w '\\\\nHTTP Code: %{http_code}\\\\nTime: %{time_total}s\\\\nIP: %{remote_ip}\\\\n' http://testerp.tplus-asset.com)",
+      "Bash(curl -s -w '\\\\nHTTP_CODE: %{http_code}\\\\nREMOTE_IP: %{remote_ip}\\\\nTIME: %{time_total}s' -o /dev/null http://testerp.tplus-asset.com)",
+      "Bash(curl -v http://testerp.tplus-asset.com --connect-timeout 10)",
+      "Bash(curl -s https://testerp.tplus-asset.com/login)",
+      "Bash(curl -s https://testerp.tplus-asset.com/assets/frappe/dist/css/login.bundle.75O67TN7.css)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Pok_t\\Project\\frappe_docker\\development",
+      "c:\\Users\\Pok_t\\Project\\frappe_docker\\devcontainer-example"
+    ]
+  }
+}
